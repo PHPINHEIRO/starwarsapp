@@ -58,6 +58,8 @@
 		A3628BDAD30749649EA1A5A4 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 36235D946DE04955A6F0D8BC /* Octicons.ttf */; };
 		0CE4231A01254ED084801749 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 339172DE114A412BA430FAA0 /* SimpleLineIcons.ttf */; };
 		AD11C5D813014483BC100B04 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB2846F3F89E47E089D5FCCF /* Zocial.ttf */; };
+		AA7D3331AA4A4A8A844F4628 /* Star Jedi Hollow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 654505FBAD2841AEB48E1CF1 /* Star Jedi Hollow.ttf */; };
+		3C11E7D959E941B1B9736E42 /* Star Jedi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665B24F54E1242E3B6E78CFF /* Star Jedi.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -386,6 +388,8 @@
 		36235D946DE04955A6F0D8BC /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		339172DE114A412BA430FAA0 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		BB2846F3F89E47E089D5FCCF /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		654505FBAD2841AEB48E1CF1 /* Star Jedi Hollow.ttf */ = {isa = PBXFileReference; name = "Star Jedi Hollow.ttf"; path = "../assets/fonts/Star Jedi Hollow.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		665B24F54E1242E3B6E78CFF /* Star Jedi.ttf */ = {isa = PBXFileReference; name = "Star Jedi.ttf"; path = "../assets/fonts/Star Jedi.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -675,6 +679,8 @@
 				36235D946DE04955A6F0D8BC /* Octicons.ttf */,
 				339172DE114A412BA430FAA0 /* SimpleLineIcons.ttf */,
 				BB2846F3F89E47E089D5FCCF /* Zocial.ttf */,
+				654505FBAD2841AEB48E1CF1 /* Star Jedi Hollow.ttf */,
+				665B24F54E1242E3B6E78CFF /* Star Jedi.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1141,6 +1147,8 @@
 				A3628BDAD30749649EA1A5A4 /* Octicons.ttf in Resources */,
 				0CE4231A01254ED084801749 /* SimpleLineIcons.ttf in Resources */,
 				AD11C5D813014483BC100B04 /* Zocial.ttf in Resources */,
+				AA7D3331AA4A4A8A844F4628 /* Star Jedi Hollow.ttf in Resources */,
+				3C11E7D959E941B1B9736E42 /* Star Jedi.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
