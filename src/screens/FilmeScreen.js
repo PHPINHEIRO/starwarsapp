@@ -8,7 +8,7 @@ export default class FilmeScreen extends Component {
   render() {
     return (
       <View>
-        <CustomHeader title='Filmes'></CustomHeader>
+        {/* <CustomHeader title='Filmes'></CustomHeader> */}
         <ListFilms></ListFilms>
       </View>
     )
