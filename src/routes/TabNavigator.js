@@ -1,9 +1,12 @@
 import React from 'react';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
+import { createBottomTabNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation'
 import FilmeScreen from '../screens/FilmeScreen';
 import PlanetsScreen from '../screens/PlanetsScreen';
 import SpeciesScreen from '../screens/SpeciesScreen';
 import StarshipsScreen from '../screens/StarshipsScreen';
+import LoadingScreen from '../screens/LoadingScreen'
+import LoginScreen from '../screens/LoginScreen'
+import SignUpScreen from '../screens/SignUpScreen'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
@@ -46,4 +49,13 @@ const TabNavigator = createBottomTabNavigator({
     
 })
 
-export default createAppContainer(TabNavigator) 
+const SwitchNavigator = createSwitchNavigator({
+    Loading: {screen:LoadingScreen},
+    Login: {screen:LoginScreen},
+    SignUp: {screen:SignUpScreen},
+    Main:{screen:TabNavigator},
+},{
+    initialRouteName: 'Loading'
+})
+
+export default createAppContainer(SwitchNavigator) 
