@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
-import CustomHeader from '../components/CustomHeader';
+import {StyleSheet, View } from 'react-native'
+import ListFilmsInfinityScrollSpecies from '../components/ListFilmsInfinityScrollSpecies';
 
 export default class SpeciesScreen extends Component {
   render() {
     return (
       <View>
-        <CustomHeader title='Espécie'></CustomHeader>
+        <ListFilmsInfinityScrollSpecies url='https://swapi.co/api/species/'></ListFilmsInfinityScrollSpecies>
       </View>
     )
   }

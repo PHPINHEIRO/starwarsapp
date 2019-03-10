@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
-import CustomHeader from '../components/CustomHeader';
+import { StyleSheet, View } from 'react-native'
+import ListFilmsInfinityScrollPlanets from '../components/ListFilmsInfinityScrollPlanets';
 
 export default class PlanetsScreen extends Component {
   render() {
     return (
       <View>
-        <CustomHeader title='Planetas'></CustomHeader>
+        <ListFilmsInfinityScrollPlanets url='https://swapi.co/api/planets/'></ListFilmsInfinityScrollPlanets>
       </View>
     )
   }

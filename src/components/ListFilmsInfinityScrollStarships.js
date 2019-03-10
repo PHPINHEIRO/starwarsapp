@@ -2,14 +2,11 @@ import React, { Component } from 'react';
 
 import { View, Text, FlatList, StyleSheet, ActivityIndicator } from 'react-native';
 
-const URL = 'https://swapi.co/api/films/';
-// const searchTerm = 'react';
-// const perPage = 20;
 
-export default class ListFilms extends Component {
+export default class ListFilmsInfinityScrollStarships extends Component {
   state = {
     data: [],
-    // page: 1,
+    page: 1,
     loading: false,
   };
 
@@ -20,17 +17,17 @@ export default class ListFilms extends Component {
   loadRepositories = async () => {
     if (this.state.loading) return;
 
-    // const { page } = this.state;
+    const { page } = this.state;
 
     this.setState({ loading: true });
 
 
-    const response = await fetch(URL);
+    const response = await fetch(`${this.props.url}?page=${page}`);
     const films = await response.json();
 
     this.setState({
       data: [ ...this.state.data, ...films.results ],
-      // page: page + 1,
+      page: page + 1,
       loading: false,
     });
   }
@@ -47,9 +44,14 @@ export default class ListFilms extends Component {
 
   renderItem = ({ item }) => (
     <View style={styles.listItem}>
-      <Text>{item.title}</Text>
-      <Text>{item.director}</Text>
-      <Text>{item.opening_crawl}</Text>
+      <Text>{item.name}</Text>
+      <Text>{item.model}</Text>
+      <Text>{item.manufacturer}</Text>
+      <Text>{item.cost_in_credits}</Text>
+      <Text>{item.length}</Text>
+      <Text>{item.max_atmosphering_speed}</Text>
+      <Text>{item.hyperdrive_rating}</Text>
+      <Text>{item.starship_class}</Text>
     </View>
   );
 
@@ -60,9 +62,9 @@ export default class ListFilms extends Component {
         contentContainerStyle={styles.list}
         data={this.state.data}
         renderItem={this.renderItem}
-        keyExtractor={item => item.episode_id.toString()}
-        // onEndReached={this.loadRepositories}
-        // onEndReachedThreshold={0.1}
+        keyExtractor={item => item.name}
+        onEndReached={this.loadRepositories}
+        onEndReachedThreshold={0.1}
         ListFooterComponent={this.renderFooter}
       />
     );
@@ -71,17 +73,23 @@ export default class ListFilms extends Component {
 
 const styles = StyleSheet.create({
   list: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
   },
 
   listItem: {
     backgroundColor: '#EEE',
-    marginTop: 20,
+    marginTop: 10,
     padding: 30,
   },
 
   loading: {
     alignSelf: 'center',
-    marginVertical: 20,
+    marginVertical: 10,
   },
 });
+
+
+
+
+
+ListFilmsInfinityScrollStarships

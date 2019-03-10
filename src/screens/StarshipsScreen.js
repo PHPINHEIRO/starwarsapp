@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
-import CustomHeader from '../components/CustomHeader';
+import { StyleSheet, View } from 'react-native'
+import ListFilmsInfinityScrollStarships from '../components/ListFilmsInfinityScrollStarships';
 
 export default class StarshipsScreen extends Component {
   render() {
     return (
       <View>
-        <CustomHeader title='Naves'></CustomHeader>
+        <ListFilmsInfinityScrollStarships url='https://swapi.co/api/starships/'></ListFilmsInfinityScrollStarships>
       </View>
     )
   }
