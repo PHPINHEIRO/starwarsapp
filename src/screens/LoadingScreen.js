@@ -3,8 +3,6 @@ import { View, Text, ActivityIndicator, StyleSheet } from 'react-native'
 import firebase from 'react-native-firebase'   
 
 export default class Loading extends React.Component {
-  
-  state = { currentUser: null }
 
   componentDidMount(){
     firebase.auth().onAuthStateChanged( user => {

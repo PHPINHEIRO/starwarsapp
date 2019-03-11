@@ -44,13 +44,21 @@ export default class ListFilmsInfinityScrollSpecies extends Component {
 
   renderItem = ({ item }) => (
     <View style={styles.listItem}>
+      <Text style={styles.txt}>Nome: </Text>
       <Text>{item.name}</Text>
+      <Text style={styles.txt}>Classe: </Text>
       <Text>{item.classification}</Text>
+      <Text style={styles.txt}>Designação:</Text>
       <Text>{item.designation}</Text>
+      <Text style={styles.txt}>Alt. Média:</Text>
       <Text>{item.average_height}</Text>
+      <Text style={styles.txt}>Espec. Vida:</Text>
       <Text>{item.average_lifespan}</Text>
+      <Text style={styles.txt}>Cor Cabelo:</Text>
       <Text>{item.hair_colors}</Text>
+      <Text style={styles.txt}>Cor Olhos:</Text>
       <Text>{item.eye_colors}</Text>
+      <Text style={styles.txt}>Idioma</Text>
       <Text>{item.language}</Text>
     </View>
   );
@@ -86,6 +94,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginVertical: 10,
   },
+  txt:{
+    fontWeight:'bold',
+    fontSize:15,
+  }
 });
 
 

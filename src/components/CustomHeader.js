@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import {StyleSheet, View } from 'react-native'
-import { Header, Text } from 'react-native-elements';
+import { Header, Button } from 'react-native-elements';
 import CustomTitleHeader from './CustomTitleHeader';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import firebase from 'react-native-firebase'
+
+
+
 
 export default class CustomHeader extends Component {
+  logout = () => {
+    firebase.auth().signOut().then(()=>{this.props.navigation.navigate('Login')})
+  }
   render() {
     return (
       <View>
@@ -14,6 +19,9 @@ export default class CustomHeader extends Component {
             backgroundColor: '#424242',
           }}
           centerComponent={<CustomTitleHeader title={this.props.title}></CustomTitleHeader>}
+          rightComponent={
+            <Button buttonStyle={styles.button} title='Sair' onPress={this.logout}></Button>
+          }
         >
         </Header>
       </View>
@@ -22,5 +30,7 @@ export default class CustomHeader extends Component {
 }
 
 const styles = StyleSheet.create({
-  
+  button:{
+    backgroundColor:'transparent'
+  }
 })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native'
+import { StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native'
 import firebase from 'react-native-firebase'
 
 export default class Login extends React.Component {
@@ -17,7 +17,7 @@ export default class Login extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Login</Text>
+        <Text style={styles.title}>Login</Text>
         {this.state.errorMessage &&
           <Text style={{ color: 'red' }}>
             {this.state.errorMessage}
@@ -37,11 +37,13 @@ export default class Login extends React.Component {
           onChangeText={password => this.setState({ password })}
           value={this.state.password}
         />
-        <Button title="Login" onPress={this.handleLogin} />
-        <Button
-          title="Don't have an account? Sign Up"
-          onPress={() => this.props.navigation.navigate('SignUp')}
-        />
+        
+        <View style={styles.buttoncontainer}>
+          <TouchableOpacity style={styles.button} onPress={this.handleLogin}><Text style={styles.txt}>        Login        </Text></TouchableOpacity>
+          <TouchableOpacity style={styles.button}
+            onPress={() => this.props.navigation.navigate('SignUp')}
+          ><Text style={styles.txt}>   Ainda não tem conta? Cadastre-se   </Text></TouchableOpacity>
+        </View>
       </View>
     )
   }
@@ -56,8 +58,32 @@ const styles = StyleSheet.create({
   textInput: {
     height: 40,
     width: '90%',
-    borderColor: 'gray',
+    borderColor: '#FFE850',
     borderWidth: 1,
-    marginTop: 8
+    marginTop: 8,
+    borderRadius: 20,
+    backgroundColor: '#424242',
+    color: '#FFF'
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 24,
+    color: '#FFE850',
+  },
+  button: {
+    height: 40,
+    width: '200%',
+    borderRadius: 50,
+    borderWidth: 1,
+    backgroundColor: '#FFE850',
+  },
+  txt: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    margin: 10,
+  },
+  buttoncontainer: {
+    paddingTop: 80,
+    alignItems: 'center'
   }
 })

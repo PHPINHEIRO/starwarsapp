@@ -47,8 +47,9 @@ export default class ListFilms extends Component {
 
   renderItem = ({ item }) => (
     <View style={styles.listItem}>
+      <Text style={styles.txt}>Título: </Text>
       <Text>{item.title}</Text>
-      <Text>{item.director}</Text>
+      <Text style={styles.txt}>Sinopse: </Text>
       <Text>{item.opening_crawl}</Text>
     </View>
   );
@@ -56,7 +57,7 @@ export default class ListFilms extends Component {
   render() {
     return (
       <FlatList
-        style={{ marginTop: 30 }}
+        style={{ marginTop: 0 }}
         contentContainerStyle={styles.list}
         data={this.state.data}
         renderItem={this.renderItem}
@@ -71,17 +72,24 @@ export default class ListFilms extends Component {
 
 const styles = StyleSheet.create({
   list: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
   },
 
   listItem: {
     backgroundColor: '#EEE',
-    marginTop: 20,
-    padding: 30,
+    marginTop: 10,
+    paddingTop:10, 
+    paddingBottom:80, 
+    paddingLeft:30,
+    paddingRight:30,
   },
 
   loading: {
     alignSelf: 'center',
     marginVertical: 20,
   },
+  txt:{
+    fontWeight:'bold',
+    fontSize:15,
+  }
 });

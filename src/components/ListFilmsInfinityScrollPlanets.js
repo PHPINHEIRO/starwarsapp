@@ -44,13 +44,21 @@ export default class ListFilmsInfinityScrollPlanets extends Component {
 
   renderItem = ({ item }) => (
     <View style={styles.listItem}>
+      <Text style={styles.txt}>Nome:</Text>
       <Text>{item.name}</Text>
+      <Text style={styles.txt}>Período de Rotação: </Text>
       <Text>{item.rotation_period}</Text>
+      <Text style={styles.txt}>Diâmetro:</Text>
       <Text>{item.diameter}</Text>
+      <Text style={styles.txt}>Clima:</Text>
       <Text>{item.climate}</Text>
+      <Text style={styles.txt}>Gravidade:</Text>
       <Text>{item.gravity}</Text>
+      <Text style={styles.txt}>Terreno:</Text>
       <Text>{item.terrain}</Text>
+      <Text style={styles.txt}>Super. Água:</Text>
       <Text>{item.surface_water}</Text>
+      <Text style={styles.txt}>População:</Text>
       <Text>{item.population}</Text>
     </View>
   );
@@ -77,6 +85,7 @@ const styles = StyleSheet.create({
   },
 
   listItem: {
+    flexDirection:'column',
     backgroundColor: '#EEE',
     marginTop: 10,
     padding: 30,
@@ -86,4 +95,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginVertical: 10,
   },
+  txt:{
+    fontWeight:'bold',
+    fontSize:15,
+  }
 });

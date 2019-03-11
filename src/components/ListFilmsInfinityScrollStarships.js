@@ -44,13 +44,21 @@ export default class ListFilmsInfinityScrollStarships extends Component {
 
   renderItem = ({ item }) => (
     <View style={styles.listItem}>
+      <Text style={styles.txt}>Nome: </Text>
       <Text>{item.name}</Text>
+      <Text style={styles.txt}>Modelo: </Text>
       <Text>{item.model}</Text>
+      <Text style={styles.txt}>Fabricante: </Text>
       <Text>{item.manufacturer}</Text>
+      <Text style={styles.txt}>Preço: </Text>
       <Text>{item.cost_in_credits}</Text>
+      <Text style={styles.txt}>Tamanho: </Text>
       <Text>{item.length}</Text>
+      <Text style={styles.txt}>Vel. Max: </Text>
       <Text>{item.max_atmosphering_speed}</Text>
+      <Text style={styles.txt}>Vel. Hiperdrive: </Text>
       <Text>{item.hyperdrive_rating}</Text>
+      <Text style={styles.txt}>Classe: </Text>
       <Text>{item.starship_class}</Text>
     </View>
   );
@@ -85,6 +93,10 @@ const styles = StyleSheet.create({
   loading: {
     alignSelf: 'center',
     marginVertical: 10,
+  },
+  txt:{
+    fontWeight:'bold',
+    fontSize:15,
   },
 });
 
