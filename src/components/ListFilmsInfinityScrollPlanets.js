@@ -21,15 +21,20 @@ export default class ListFilmsInfinityScrollPlanets extends Component {
 
     this.setState({ loading: true });
 
+    try {
+      const response = await fetch(`${this.props.url}?page=${page}`);
+      const films = await response.json();
+      this.setState({
+        data: [ ...this.state.data, ...films.results ],
+        page: page + 1,
+        loading: false,
+      });
+    } catch (error) {
+      alert(error)
+    }
+    
 
-    const response = await fetch(`${this.props.url}?page=${page}`);
-    const films = await response.json();
-
-    this.setState({
-      data: [ ...this.state.data, ...films.results ],
-      page: page + 1,
-      loading: false,
-    });
+    
   }
 
   renderFooter = () => {
