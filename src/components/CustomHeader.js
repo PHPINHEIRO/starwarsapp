@@ -9,7 +9,7 @@ import firebase from 'react-native-firebase'
 
 export default class CustomHeader extends Component {
   logout = () => {
-    firebase.auth().signOut().then(()=>{this.props.navigation.navigate('Login')})
+    firebase.auth().signOut()
   }
   render() {
     return (

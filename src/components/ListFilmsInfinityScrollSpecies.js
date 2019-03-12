@@ -22,14 +22,21 @@ export default class ListFilmsInfinityScrollSpecies extends Component {
     this.setState({ loading: true });
 
 
-    const response = await fetch(`${this.props.url}?page=${page}`);
-    const films = await response.json();
-
-    this.setState({
-      data: [ ...this.state.data, ...films.results ],
-      page: page + 1,
-      loading: false,
-    });
+    try {
+      const response = await fetch(`${this.props.url}?page=${page}`);
+      const films = await response.json();
+      if(films.results){
+        this.setState({
+          data: [ ...this.state.data, ...films.results ],
+          page: page + 1,
+          loading: false,
+        });
+      }else(
+        alert('Sem mais informacoes')
+      )
+    } catch {
+      alert('Problema na requisicao')
+    }
   }
 
   renderFooter = () => {
