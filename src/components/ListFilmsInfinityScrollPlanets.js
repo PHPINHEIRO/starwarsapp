@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
 import { View, Text, FlatList, StyleSheet, ActivityIndicator } from 'react-native';
+import { Card, Avatar } from 'react-native-elements';
+import axios from 'axios'
 
 
-export default class ListFilmsInfinityScrollPlanets extends Component {
+export default class Pokemon extends Component {
   state = {
     data: [],
-    page: 1,
+    offset: 1,
     loading: false,
   };
 
@@ -17,28 +19,25 @@ export default class ListFilmsInfinityScrollPlanets extends Component {
   loadRepositories = async () => {
     if (this.state.loading) return;
 
-    const { page } = this.state;
+    const { offset } = this.state;
 
     this.setState({ loading: true });
 
     try {
-      const response = await fetch(`${this.props.url}?page=${page}`);
-      const films = await response.json();
-      if(films.results){
+      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`);
+      const pokemons = await response.data;
+      if(pokemons.results){
         this.setState({
-          data: [ ...this.state.data, ...films.results ],
-          page: page + 1,
+          data: [ ...this.state.data, ...pokemons.results ],
+          offset: offset + 20,
           loading: false,
-        });
+      });
       }else(
         alert('Sem mais informacoes')
       )
     } catch {
       alert('Problema na requisicao')
-    }
-    
-
-    
+    }  
   }
 
   renderFooter = () => {
@@ -52,24 +51,24 @@ export default class ListFilmsInfinityScrollPlanets extends Component {
   };
 
   renderItem = ({ item }) => (
-    <View style={styles.listItem}>
-      <Text style={styles.txt}>Nome:</Text>
-      <Text>{item.name}</Text>
-      <Text style={styles.txt}>Período de Rotação: </Text>
-      <Text>{item.rotation_period}</Text>
-      <Text style={styles.txt}>Diâmetro:</Text>
-      <Text>{item.diameter}</Text>
-      <Text style={styles.txt}>Clima:</Text>
-      <Text>{item.climate}</Text>
-      <Text style={styles.txt}>Gravidade:</Text>
-      <Text>{item.gravity}</Text>
-      <Text style={styles.txt}>Terreno:</Text>
-      <Text>{item.terrain}</Text>
-      <Text style={styles.txt}>Super. Água:</Text>
-      <Text>{item.surface_water}</Text>
-      <Text style={styles.txt}>População:</Text>
-      <Text>{item.population}</Text>
-    </View>
+   <View>
+        <Card title={item.name}
+          containerStyle={styles.card}
+          titleStyle={{fontSize:12}}
+          >
+          <View style={{alignItems:'center'}}>
+            <Avatar
+              rounded
+              size='medium'
+              overlayContainerStyle={{backgroundColor: '#A5D6A7'}}
+              source={{
+                uri:
+                  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+              }}
+            />
+          </View>
+        </Card>
+      </View>
   );
 
   render() {
@@ -107,5 +106,12 @@ const styles = StyleSheet.create({
   txt:{
     fontWeight:'bold',
     fontSize:15,
+  },
+  card: {
+    width: 90,
+    height: 120,
+    justifyContent: 'center',
+    borderRadius: 10,
+    backgroundColor:'#66BB6A'
   }
 });
