@@ -17,12 +17,10 @@ Um simples app feito em [React Native](https://facebook.github.io/react-native/)
 
 ## ScreenShots
 <li>
-  <li>
-  <img src="screenshots/login.jpeg" width="200">
-  <img src="screenshots/cadastro.jpeg" width="200">
-  <img src="screenshots/listagem_filmes.jpeg" width="200">
-  <img src="screenshots/listagem_planeta.jpeg" width="200">
-  <img src="screenshots/listagem_especies.jpeg" width="200">
-  <img src="screenshots/listagem_naves.jpeg" width="200">
-  </li>
+<img src="screenshots/login.jpeg" width="200">
+<img src="screenshots/cadastro.jpeg" width="200">
+<img src="screenshots/listagem_filmes.jpeg" width="200">
+<img src="screenshots/listagem_planeta.jpeg" width="200">
+<img src="screenshots/listagem_especies.jpeg" width="200">
+<img src="screenshots/listagem_naves.jpeg" width="200">
 </li>
